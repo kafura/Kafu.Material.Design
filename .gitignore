@@ -221,3 +221,4 @@ node_modules/
 dist/vendor/
 _site/
 bower_components/
+.idea/

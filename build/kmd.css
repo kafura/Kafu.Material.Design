@@ -1,4 +1,10 @@
 body {
   background-color: blue;
+  color: blue;
   color: green;
+}
+.hepper {
+  color: blue;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
 }
