@@ -1,0 +1,42 @@
+{
+    "name": "Kafu.Material.Design",
+    "description": "A material design",
+    "version": "0.0.1",
+    "homepage": "http://www.kafu.dk",
+    "authors": [
+        "Ralf Bach"
+    ],
+    "keywords": [
+        "html",
+        "css",
+        "js",
+        "javascript",
+        "sass",
+        "mobile-first",
+        "responsive",
+        "rwd",
+        "front-end",
+        "framework",
+        "boilerplate",
+        "web"
+    ],
+    "license": "MIT",
+    "main": [
+        "./build/kmd.js",
+        "./build/kmd.min.js",
+        "./build/kmd.css",
+        "./build/kmd.min.css",
+        "./build/kmd.html"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "src",
+        "dist",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "2.1.4"
+    }
+}
