@@ -1,0 +1,5 @@
+﻿
+.row.colored [class*=col-] {
+  background-color: #dddddd;
+  border-color: #eeeeee;
+}

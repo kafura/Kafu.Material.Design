@@ -1,0 +1,74 @@
+﻿@import "mixins.less";
+
+.content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 930px;
+  width: ~"calc(100% - 16px)";
+  //overflow: visible;
+}
+
+// Nyt grid, hvis det skal være responsive, så skal vi til at benytte følgende:
+// Grid i 6 kolonner, sådan at vi kan gøre følgende:
+// Col-s- = small = mobil    = imellem 0 og 400px
+// col-m- = medium = tablet  = imellem 400 og 900px
+// col-l- = large = desktop  = mere end 900px
+.generate-columns(@pre, @n, @i: 1) when (@i =< @n) {
+  .col@{pre}-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .generate-columns(@pre, @n, (@i + 1));
+}
+
+// row benyttes til at indsætte col-
+.row {
+  clear: both;
+  margin: 0 -8px 0 -8px;
+
+  &:before {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+
+  & + .row {
+    padding-top: 16px;
+  }
+}
+  
+// Alle kolonner
+[class*=col-] {
+  display: block;
+  float: left;
+  min-height: 1px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  background-clip: padding-box;
+}
+
+// col--{number} Default, og hvis ikke andet angivet, så benyttes denne. 
+.generate-columns(-, 12);
+
+@media screen and (max-width: 600px) {
+  // col-s-{number} Mobile
+  .generate-columns(-s, 12);
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  // col-m-{number} Tablet
+  .generate-columns(-m, 12);
+}
+
+@media screen and (min-width: 900px) {
+  // col-l-{number} Desktop
+  .generate-columns(-l, 12);
+}
+
+@media print {
+  .generate-columns(-p, 12);
+}

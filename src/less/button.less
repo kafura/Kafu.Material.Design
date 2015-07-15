@@ -1,0 +1,86 @@
+﻿@import "vars.less";
+@import "mixins.less";
+
+.btn {
+  background: 0 0;
+  border: none;
+  border-radius: 2px;
+  color: #000;
+  position: relative;
+  height: 36px;
+  min-width: 64px;
+  padding: 0 8px;
+  display: inline-block;
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  overflow: hidden;
+  will-change: box-shadow,transform;
+  transition: box-shadow 0.2s @animation-curve-fast-out-linear-in,
+              background-color 0.2s @animation-curve-default,
+              color 0.2s @animation-curve-default;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  line-height: @button-height;
+  vertical-align: middle;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  
+  &.btn-raised {
+    background-color:rgba(158,158,158,.2);
+    .shadow-2dp();
+
+    &:hover {
+      background-color: rgba(158,158,158,.2);
+    }
+
+    /*&:focus:not(:active) {
+      background-color: rgba(0,0,0,.12);
+    }*/
+
+    &:active {
+      background-color: rgba(158,158,158,.4);
+      .shadow-4dp();
+    }
+  }
+
+  &.btn-flat {
+    &:hover {
+      background-color: rgba(158,158,158,.2);
+    }
+
+    /*&:focus:not(:active) {
+      background-color: rgba(0,0,0,.12);
+    }*/
+
+    &:active {
+      background-color: rgba(158,158,158,.4);
+    }
+  }
+
+  &.btn-card-menu {
+    border-radius: 50%;
+    font-size: 24px;
+    height: 32px;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 32px;
+    width: 32px;
+    padding: 0;
+    overflow: hidden;
+    color: inherit;
+    line-height: normal;
+  }
+
+  
+}
+
+input.btn[type="submit"] {
+  -webkit-appearance:none;
+}
