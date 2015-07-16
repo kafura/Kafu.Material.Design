@@ -8,60 +8,105 @@
   <title>Kafu.Material.Design Tests</title>
 
   <link href="../../build/kmd.css" rel="stylesheet"/>
-  <link href="test-assets/test.css" rel="stylesheet" />
+  <link href="test-assets/test.css" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-  <article class="content">
-    <h1>Title</h1>
-    <hr/>
 
-    <div class="row colored">
-      <div class="col--1">1</div>
-      <div class="col--2">2</div>
-      <div class="col--9">9</div>
+<header>
+  <div class="btn btn-drawer" id="drawer-toggle">
+    <i class="material-icons">menu</i>
+  </div>
+  <div class="nav-main-wrap">
+    <nav class="nav-main" role="navigation">
+      <ul>
+        <li><a href="#">Hepper</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="drawer" id="drawer-toggle-drawer">
+    <nav class="drawer-navigation">
+      <a href="#" class="drawer-navigation-link">Hepper</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+  <div class="row colored">
+    <div class="col--1">1</div>
+    <div class="col--2">2</div>
+    <div class="col--9">9</div>
+  </div>
+  <div class="row colored">
+    <div class="col--1">1</div>
+    <div class="col--2">2</div>
+    <div class="col--9">9</div>
+  </div>
+
+
+
+  <div class="row colored">
+    <div class="col--3">3</div>
+    <div class="col--6">6</div>
+    <div class="col--3">3</div>
+  </div>
+
+  <div class="row colored">
+    <div class="col--12">
+      <div class="row">
+        <div class="col--3">3</div>
+        <div class="col--6">6</div>
+        <div class="col--3">3</div>
+      </div>
     </div>
-    <div class="row colored">
-      <div class="col--1">1</div>
-      <div class="col--2">2</div>
-      <div class="col--9">9</div>
+  </div>
+
+  <div class="row">
+    <div class="col--6">
+      <div class="card">6</div>
     </div>
-
-    <hr/>
-
-    <div class="row colored">
-      <div class="col--3">3</div>
-      <div class="col--6">6</div>
-      <div class="col--3">3</div>
-    </div>
-
-    <div class="row colored">
-      <div class="col--12">
-        <div class="row">
-          <div class="col--3">3</div>
-          <div class="col--6">6</div>
-          <div class="col--3">3</div>
+    <div class="col--6">
+      <div class="card">
+        <div class="card-menu"><button class="btn btn-icon"><i class="material-icons">share</i></button>
+        </div>
+        <div class="card-title">Hepper</div>
+        <div class="card-inner">Hepperding</div>
+        <div class="card-actions card-border">
+          <button class="btn btn-flat">En knap</button>
+          <button class="btn btn-flat">En knap mere</button>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="col--6">
-        <div class="card">6</div>
-      </div>
-      <div class="col--6">
-        <div class="card">6</div>
-      </div>
+  <div class="row">
+    <div class="col--12">
+      <button class="btn btn-raised">Raised</button>
+      <button class="btn btn-flat">Flat</button>
+      <button class="btn btn-fab">F</button>
     </div>
+  </div>
+</main>
 
-    <div class="row">
-      <div class="col--12">
-        <button class="btn btn-raised">Raised</button>
-        <button class="btn btn-flat">Flat</button>
-      </div>
-    </div>
-  </article>
+<footer>
+  
+</footer>
+<!--<script src="../../../../build/vendor/jquery-2.1.4.min.js"></script>-->
+<!--<script src="../../../../build/kmd.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-  <!--<script src="../../../../build/vendor/jquery-2.1.4.min.js"></script>-->
-  <!--<script src="../../../../build/kmd.js"></script>-->
+<script>
+  $(function() {
+    $("#drawer-toggle").on("click", function() {
+      $("#drawer-toggle-drawer").toggleClass("is-visible");
+
+      $("main").one("click", function() {
+        $("#drawer-toggle-drawer").removeClass("is-visible");
+      });
+    });
+  });
+</script>
 </body>
 </html>
