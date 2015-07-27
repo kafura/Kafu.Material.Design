@@ -1,3 +1,4 @@
+/// <binding ProjectOpened='watch' />
 // Include gulp
 var gulp = require("gulp");
 
