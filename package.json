@@ -17,8 +17,9 @@
     "web"
   ],
   "scripts": {
-    "build:css": "node_modules/less/bin/lessc src/less/kmd.less build/kmd.css && node_modules/uglifycss/uglifycss build/kmd.css > build/kmd.min.css",
-    "watch:css": "watch 'npm run build:css' src/less/"
+    "uglify:css": "node_modules/less/bin/lessc src/less/kmd.less | node_modules/uglifycss/uglifycss > build/kmd.min.css",
+    "build:css": "node_modules/less/bin/lessc src/less/kmd.less build/kmd.css",
+    "watch-css": "watch-run -p 'src/less/*.less' 'npm run build:css && npm run uglify:css'"
   },
   "homepage": "http://www.kafu.dk",
   "author": "Ralf Bach",
@@ -37,6 +38,7 @@
   ],
   "devDependencies": {
     "less": "^2.6.0",
-    "uglifycss": "0.0.20"
+    "uglifycss": "0.0.20",
+    "watch-run": "^1.2.4"
   }
 }
