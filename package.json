@@ -19,7 +19,7 @@
   "scripts": {
     "uglify:css": "node_modules/less/bin/lessc src/less/kmd.less | node_modules/uglifycss/uglifycss > build/kmd.min.css",
     "build:css": "node_modules/less/bin/lessc src/less/kmd.less build/kmd.css",
-    "watch-css": "watch-run -p 'src/less/*.less' 'npm run build:css && npm run uglify:css'"
+    "watch-css": "watch-run -p -i 'src/less/*.less' 'npm run build:css && npm run uglify:css'"
   },
   "homepage": "http://www.kafu.dk",
   "author": "Ralf Bach",
