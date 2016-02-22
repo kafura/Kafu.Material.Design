@@ -1,0 +1,29 @@
+@import "vars.less";
+@import "mixins.less";
+
+.table {
+
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    .shadow-2dp();
+
+    tr{
+        transition: background-color .3s @animation-curve-default;
+
+        &:hover {
+            background-color: blue;
+        }
+    }
+
+    th {
+        padding: 0 18px 12px;
+    }
+
+    td {
+        padding: 0 18px 12px;
+        border-top: 1px solid blue;
+    }
+}

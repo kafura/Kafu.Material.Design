@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
+<div class="obfuscator"></div>
 
 <header>
   <div class="nav-wrap">
@@ -70,6 +71,40 @@
 
   <div class="row">
     <div class="col--12">
+      <h1>Colors</h1>
+      <div class="color-dark-contrast">@color-dark-contrast</div>
+      <div class="color-light-contrast">@color-light-contrast</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col--12">
+      <h1>Shadows</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col--4">
+      <div class="shadow-2dp">shadow-2dp</div>
+    </div>
+    <div class="col--4">
+      <div class="shadow-3dp">shadow-3dp</div>
+    </div>
+    <div class="col--4">
+      <div class="shadow-4dp">shadow-4dp</div>
+    </div>
+    <div class="col--4">
+      <div class="shadow-6dp">shadow-6dp</div>
+    </div>
+    <div class="col--4">
+      <div class="shadow-8dp">shadow-8dp</div>
+    </div>
+    <div class="col--4">
+      <div class="shadow-16dp">shadow-16dp</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col--12">
       <h1>Card</h1>
     </div>
   </div>
@@ -103,6 +138,44 @@
       <button class="btn btn-fab">F</button>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col--12">
+      <h1>Table</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col--12">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Hep1</th>
+          <th>Hep2</th>
+          <th>Hep3</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hep1</td>
+            <td>Hep2</td>
+            <td>Hep3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col--12">
+      <h1>Typography</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col--12">
+      <h1>Form</h1>
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -113,14 +186,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <script>
-  $(function() {
-    $("#drawer-toggle").on("click", function() {
-      $("#drawer-toggle-drawer").toggleClass("is-visible");
+  var drawer = function() {
+    "use strict";
 
-      $("main").one("click", function() {
-        $("#drawer-toggle-drawer").removeClass("is-visible");
+    var $obfuscator = $(".obfuscator");
+    var $hideElements = $("#drawer-toggle-drawer, .obfuscator");
+
+    $("#drawer-toggle").on("click", function() {
+      $hideElements.toggleClass("is-visible");
+
+      $obfuscator.one("click", function() {
+        $hideElements.removeClass("is-visible");
       });
     });
+  };
+
+
+  $(function() {
+    drawer();
   });
 </script>
 </body>

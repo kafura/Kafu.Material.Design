@@ -1,0 +1,22 @@
+
+.obfuscator {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+    visibility: hidden;
+    transition-property: background-color;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+
+    &.is-visible {
+        background-color: rgba(0,0,0,.5);
+        visibility: visible;
+
+        pointer-events: auto;
+        opacity: 1;
+    }
+}
